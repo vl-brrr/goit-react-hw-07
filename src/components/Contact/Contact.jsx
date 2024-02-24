@@ -1,10 +1,10 @@
 import { MdAccountCircle } from 'react-icons/md';
 import { MdLocalPhone } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from '../../redux/operations';
 import css from './Contact.module.css';
 
-export const Contact = ({ contact: { id, name, number } }) => {
+export const Contact = ({ contact: { id, name, phone } }) => {
   const dispatch = useDispatch();
   return (
     <li className={css.contactField}>
@@ -15,7 +15,7 @@ export const Contact = ({ contact: { id, name, number } }) => {
         </p>
         <p className={css.fieldInfo}>
           <MdLocalPhone size={20} className={css.icon} />
-          {number}
+          {phone}
         </p>
       </div>
       <button className={css.button} onClick={() => dispatch(deleteContact(id))}>
