@@ -11,6 +11,7 @@ import {
 } from './redux/selectors.js';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
 import { Loader } from './components/Loader/Loader';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
       )}
       {loading && <Loader />}
       {error && <ErrorMessage />}
+      <Toaster position="top-center" />
     </>
   );
 }
